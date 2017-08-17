@@ -295,7 +295,11 @@ gulp.task('start:client', cb => {
 });
 
 gulp.task('start:server', () => {
+  console.log('process.env.NODE_ENV',process.env.NODE_ENV);
     process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+    console.log('process.env.NODE_ENV',process.env.NODE_ENV);
+    process.env.NODE_ENV = 'development';
+    console.log('process.env.NODE_ENV',process.env.NODE_ENV);
     config = require(`./${serverPath}/config/environment`);
     nodemon(`-w ${serverPath} ${serverPath}`)
         .on('log', onServerLog);

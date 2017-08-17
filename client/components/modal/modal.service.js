@@ -3,6 +3,7 @@
 import angular from 'angular';
 
 export function Modal($rootScope, $uibModal) {
+  'ngInject';
   /**
    * Opens a modal
    * @param  {Object} scope      - an object to be merged with modal's scope
@@ -38,7 +39,7 @@ export function Modal($rootScope, $uibModal) {
          * @param  {String} name   - name or info to show on modal
          * @param  {All}           - any additional args are passed straight to del callback
          */
-        return function(...args) {
+        return function(args) {
           var slicedArgs = Reflect.apply(Array.prototype.slice, args);
           var name = slicedArgs.shift();
           var deleteModal;
